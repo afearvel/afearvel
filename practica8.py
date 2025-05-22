@@ -1,24 +1,23 @@
-class Perro:
+class Animal:
     def hacer_sonido(self):
-        return "Guau Guau"
+        # Este método lo define cada animal según su especie
+        pass
 
-class Gato:
+class Perro(Animal):
     def hacer_sonido(self):
-        return "Miau Miau"
+        return "Guau guau!"
 
-class Vaca:
+class Gato(Animal):
     def hacer_sonido(self):
-        return "Muuu"
+        return "Miau~"
 
-# Función que usa polimorfismo
-def hacer_sonar(animal):
-    print(animal.hacer_sonido())  # Llama al método correcto según el animal
+# Esta función recibe un animal y hace que emita su sonido
+def reproducir_sonido(animal):
+    print(animal.hacer_sonido())
 
-# Uso
-perro = Perro()
-gato = Gato()
-vaca = Vaca()
+# Creamos algunas mascotas
+firulais = Perro()
+michi = Gato()
 
-hacer_sonar(perro)  
-hacer_sonar(gato)   
-hacer_sonar(vaca)   
+reproducir_sonido(firulais)  # Guau guau!
+reproducir_sonido(michi)     # Miau~

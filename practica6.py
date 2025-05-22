@@ -1,27 +1,27 @@
-from abc import ABC, abstractmethod  # Importamos para hacer una clase abstracta
+from abc import ABC, abstractmethod
 
-class Figura(ABC):  # Clase abstracta
+class FormaGeometrica(ABC):  # Clase base abstracta
     @abstractmethod
-    def calcular_area(self):  # Método sin implementación
-        pass  # No definimos cómo calcular el área aquí
+    def calcular_area(self):
+        pass  # Método que debe implementarse en las subclases
 
-class Cuadrado(Figura):  # Clase que hereda de Figura
-    def __init__(self, lado):
-        self.lado = lado
-
-    def calcular_area(self):  # Ahora sí implementamos el cálculo del área
-        return self.lado * self.lado
-
-class Circulo(Figura):  # Otra clase que hereda de Figura
-    def __init__(self, radio):
-        self.radio = radio
+class RectanguloCuadrado(FormaGeometrica):
+    def __init__(self, medida):
+        self.lado = medida
 
     def calcular_area(self):
-        return 3.14 * self.radio * self.radio
+        return self.lado * self.lado
 
-# Uso
-cuadrado = Cuadrado(4)
-circulo = Circulo(3)
+class Rueda(FormaGeometrica):
+    def __init__(self, tamano):
+        self.radio = tamano
 
-print(cuadrado.calcular_area())  
-print(circulo.calcular_area())   
+    def calcular_area(self):
+        return 3.1416 * self.radio ** 2
+
+# Ejecución del programa
+figura1 = RectanguloCuadrado(5)
+figura2 = Rueda(3)
+
+print(f"El área del rectángulo cuadrado es: {figura1.calcular_area()}")  # 25
+print(f"El área de la rueda es: {figura2.calcular_area()}")  # 28.2744

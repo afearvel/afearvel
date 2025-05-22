@@ -5,4 +5,5 @@ class Cuadrado:
     def area(L):
         a=L*L
         return print(a)
+        
 Cuadrado.perimetro(4)

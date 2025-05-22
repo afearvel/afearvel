@@ -9,9 +9,11 @@ class Persona:
     def set_edad(self, nueva_edad):
         if nueva_edad > 0:
             self.__edad = nueva_edad
+            
 #Encapsulamiento
 persona = Persona("Juan", 25)
 print(persona.get_nombre())
+
 
 #polimorfismo
 class Animal:

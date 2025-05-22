@@ -38,7 +38,7 @@ print(dic["x"])
 print(dic.get("x"))
 print(dic.get("a"))
 
-dic["x"] = "equisD"
+dic["x"] = "equisde"
 print(dic)
 dic["a"] = "a"
 print(dic)
@@ -56,38 +56,38 @@ print(dic.clear())
 
 a = {1, 2, 3}
 b = {3, 4, 5}
-# Unión
+
 union = a.union(b)
 print("Unión:", union)
-# Intersección
+
 interseccion = a.intersection(b)
 print("Intersección:", interseccion)
-# Diferencia
+
 diferencia = a.difference(b)
 print("Diferencia:", diferencia)
 diferenciaMenos = b-a
 print("Diferencia menos:", diferenciaMenos)
-# Diferencia simétrica
+
 diferenciaSimetrica = a.symmetric_difference(b)
 print("Diferencia simétrica:", diferenciaSimetrica)
 diferenciaExpresion = a ^ b
 print("Diferencia simétrica expresion:", diferenciaExpresion)
-# Subconjunto
+
 a = {1,2,3}
 b = {1,2,3,4,5}
 c = {}
 print(type(c))
 subconjunto = a.issubset(b)
 print("Subconjunto:", subconjunto)
-# Superconjunto
+
 superconjunto = b.issuperset(a)
 print("Superconjunto:", superconjunto)
-# Disjunto
+
 a= {1, 2, 3}
 b= {4, 5, 6}
 disjunto = a.isdisjoint(b)
 print("Disjunto:", disjunto)
-#copia
+
 a = {1, 2, 3}
 e = a.copy()
 print("Copia de a:", e)
@@ -96,16 +96,14 @@ al = len(a)
 print("Longitud de a:", al)
 print(a.clear())
 
-#Crea un conjunto de 5 elementos, a ese conjunto le vas a agregar un valor que no existe,
-#agregar valor que si existe, le vas a eliminar un valor
-#que existe, un valor que no existe y vas a verificar si existe un valor
+
 
 conjunto = {1, 2, 3, 4, 5}
 print(conjunto)
 conjunto.add(6)  
 conjunto.add(3)  
 conjunto.remove(2)
-conjunto.remove(8) # Esto lanzará un error si 8 no está en el conjunto
+conjunto.remove(8)
 conjunto.discard(7)
 print(conjunto)
 print(3 in conjunto) 

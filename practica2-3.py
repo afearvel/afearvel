@@ -7,8 +7,8 @@ class Figura:
         return area
 
     def perimetroFig(ladoLargo, numLado):
-        perim = ladoLargo * numLado
-        return perim
+        perimetro = ladoLargo * numLado
+        return perimetro
 
 numLado = int(input("ingresa la cantidad de lados en la figura: "))
 ladoLargo = float(input("ingresa la medida del lado: "))

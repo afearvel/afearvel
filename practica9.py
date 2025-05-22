@@ -7,9 +7,6 @@ class Consecutive(Enum):
     Viernes=5
 
 print(Consecutive.Lunes) 
-
 print(Consecutive.Lunes.value)
-
 print(type(Consecutive.Lunes))
-
 print(type(Consecutive.Lunes.value))

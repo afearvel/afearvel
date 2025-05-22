@@ -1,53 +1,56 @@
-from numpy import array 
-import numpy as np 
+import numpy as np
 
-class ArreglosNP: 
+class Vector:
+    def __init__(self, datos):
+        self.elementos = np.array(datos)
     
-    def __init__ (self, v):
-        self.arregloNP=np.array(v)
-    def insertarNP (self,v):
-        self.arregloNP=np.insert(self.arregloNP,i,v)
-        print(self.arregloNP)
-    def eliminarNP (self,i):
-        self.arregloNP= np.delete(self.arregloNP,i)
-        print(self.arregloNP)
-    def modificarNP (self,i,w):
-        self.arregloNP[i]=w
-        print(self.arregloNP)
+    def agregar(self, valor):
+        self.elementos = np.append(self.elementos, valor)
+        print(f"Vector actualizado: {self.elementos}")
+    
+    def quitar(self, pos):
+        if 0 <= pos < len(self.elementos):
+            self.elementos = np.delete(self.elementos, pos)
+            print(f"Vector actualizado: {self.elementos}")
+        else:
+            print("Posición inválida.")
+    
+    def actualizar(self, pos, nuevo_valor):
+        self.elementos[pos] = nuevo_valor
+        print(f"Vector actualizado: {self.elementos}")
 
-class Lista: 
-    def __init__(self,v):
-        self.listi=[]
-    def insertar (self,v):
-        self.listi.append(v)
-        print (self.listi)
-    def eliminar (self,i):
-        self.listi.pop(i)
-        print(self.listi)
-    def modificar (self,i,w):
-        self.listi[i]=w
-        print(self.listi)
+class Coleccion:
+    def __init__(self):
+        self.datos = ['uno', 'dos', 'tres']
+    
+    def agregar_dato(self, valor):
+        self.datos.append(valor)
+        print(f"Lista actualizada: {self.datos}")
+    
+    def eliminar_dato(self, pos):
+        if 0 <= pos < len(self.datos):
+            eliminado = self.datos.pop(pos)
+            print(f"Elemento '{eliminado}' eliminado. Lista actualizada: {self.datos}")
+        else:
+            print("Posición inválida.")
+    
+    def cambiar_dato(self, pos, nuevo_valor):
+        self.datos[pos] = nuevo_valor
+        print(f"Lista actualizada: {self.datos}")
 
-v=7
-i=0
-w=8
+# Uso de las clases
+vector = Vector([5, 15, 25])
+coleccion = Coleccion()
 
+valor = input("Introduce un elemento para agregar: ")
+coleccion.agregar_dato(valor)
+vector.agregar(valor)
 
-arreglos= ArreglosNP(v)
+pos = int(input("Indica la posición que deseas eliminar: "))
+coleccion.eliminar_dato(pos)
+vector.quitar(pos)
 
-arreglos.insertarNP(3)
-arreglos.insertarNP(6)
-arreglos.insertarNP(9)
-
-arreglos.modificarNP(2,5)
-print("eliminar")
-arreglos.eliminarNP(0)
-
-print("Listas-----------------------")
-listi1= Lista(v)
-listi1.insertar(11)
-listi1.insertar(12)
-listi1.insertar(13)
-listi1.insertar(14)
-listi1.eliminar(1)
-listi1.modificar(1,20)
+nuevo = input("Introduce un nuevo valor para modificar: ")
+pos = int(input("Indica la posición que deseas modificar: "))
+coleccion.cambiar_dato(pos, nuevo)
+vector.actualizar(pos, nuevo)

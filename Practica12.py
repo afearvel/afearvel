@@ -9,8 +9,7 @@ class Dias(Enum):
     Sabado = "Sábado"
     Domingo = "Domingo"
 
-# no hay constructor porque tenemos el Enum
-# no hay self porque Enum no necesita instanciar objetos
+
 def verificar_dia(dia):
     try:
         if not isinstance(dia, str):
